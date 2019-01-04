@@ -1,9 +1,13 @@
+'use strict';
+
 const Controller = require('egg').Controller;
 
 class TransformController extends Controller {
   async index() {
-    console.log(this.ctx.request.body);
-    this.ctx.body = 'Hello world';
+    const { code } = this.ctx.request.body;
+
+    const { code: transformCode } = await this.ctx.service.transform.index(code);
+    this.ctx.body = JSON.stringify({ content: transformCode });
   }
 }
 

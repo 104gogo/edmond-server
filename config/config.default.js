@@ -14,7 +14,7 @@ module.exports = appInfo => {
     csrf: {
       enable: false, // 没有配置的话，错误信息：403 missing csrf token
     },
-  }
+  };
 
   return config;
 };
