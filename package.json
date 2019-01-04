@@ -24,6 +24,7 @@
     "@babel/preset-env": "^7.2.3",
     "egg": "^2.14.2",
     "egg-cors": "^2.1.2",
+    "egg-errors": "^2.1.0",
     "eslint": "^5.11.1",
     "eslint-config-egg": "^7.1.0"
   },

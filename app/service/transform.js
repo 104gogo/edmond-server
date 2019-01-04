@@ -3,6 +3,7 @@
 const Service = require('egg').Service;
 const { transformSync } = require('@babel/core');
 
+const CustomError = require('../extend/CustomError');
 const babel = require('../public/.babelrc.js');
 class TransformService extends Service {
   async index(code) {
@@ -10,7 +11,12 @@ class TransformService extends Service {
       babelrc: false,
     });
 
-    const result = transformSync(code, options);
+    let result = {};
+    try {
+      result = transformSync(code, options);
+    } catch (e) {
+      throw new CustomError('代码转译失败！');
+    }
 
     return result;
   }
