@@ -15,7 +15,7 @@ class TransformService extends Service {
     try {
       result = transformSync(code, options);
     } catch (e) {
-      throw new CustomError('代码转译失败！');
+      throw new CustomError(e.message);
     }
 
     return result;
