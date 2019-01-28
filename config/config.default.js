@@ -10,10 +10,15 @@ module.exports = appInfo => {
   config.middleware = [];
 
   config.security = {
-    domainWhiteList: [ 'http://localhost:8899' ], // 没有配置的话，错误信息：404
+    // domainWhiteList: [ 'http://localhost:8899' ], // 没有配置的话，错误信息：404
     csrf: {
       enable: false, // 没有配置的话，错误信息：403 missing csrf token
     },
+  };
+
+  config.cors = {
+    origin: '*',
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
   };
 
   config.onerror = {

@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "egg-bin dev",
+    "dev": "egg-bin dev -w -p 8898",
+    "start": "egg-scripts start -p 8080",
+    "server:stop": "egg-scripts stop",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

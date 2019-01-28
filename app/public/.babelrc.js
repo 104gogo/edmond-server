@@ -32,5 +32,11 @@ module.exports = {
         useESModules: false
       }
     ],
+    // [
+    //   '@babel/plugin-transform-modules-commonjs',
+    //   {
+    //     strictMode: false
+    //   }
+    // ]
   ]
 }
